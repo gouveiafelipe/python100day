@@ -1,5 +1,5 @@
 print(''' Welcome to Treasure Island.\n
-Your missioi ns to find the treasure.
+Your mission is to find the treasure.
 *******************************************************************************
           |                   |                  |                     |
  _________|________________.=""_;=.______________|_____________________|_______
