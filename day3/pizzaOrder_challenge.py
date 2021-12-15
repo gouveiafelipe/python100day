@@ -1,7 +1,8 @@
 # Congratulations, you've got a job at Python Pizza. Your first job is to build an automatic pizza order program.
 print("Welcome to Python Pizza Deliveries!!")
 
- #pizza's price
+#pizza's price
+
 size = input("What size pizza do you want? S, M or L ?")
 add_pepperoni = input("Do you want pepperoni? Y or N ")
 extra_cheese = input("Do you want extra cheese? Y or N ")
@@ -22,39 +23,16 @@ bill = 0
 
 if size == small_size:
     bill += small_price
-    if add_pepperoni == "Y":
-        bill += extra_pp_small
-    #else: bill
-
-    if extra_cheese == "Y":
-        bill += order_cheese
-    #else: bill
-
-    print(f"Your final bill is: ${bill}.")
-
 elif size == medium_size:
     bill += medium_price
-    if add_pepperoni == "Y":
-        bill += extra_pp_medium_large
-    #else: bill
+bill += large_price
 
-    if extra_cheese == "Y":
-        bill += order_cheese
-    #else: bill
+if add_pepperoni == "Y":
+    if size == small_size:
+        bill += extra_pp_small
+    bill += extra_pp_medium_large
 
-    print(f"Your final bill is: ${bill}.")
+if extra_cheese == "Y":
+    bill += 1
 
-else:
-
-    bill += large_price
-    if add_pepperoni == "Y":
-        bill += extra_pp_medium_large
-    #else: bill
-
-    if extra_cheese == "Y":
-        bill += order_cheese
-    #else: bill
-
-    print(f"Your final bill is: ${bill}.")
-
-
+print(f"Your final bill is: ${bill}.")
