@@ -7,3 +7,5 @@ if random_intenger == 0:
 else:
     print("Tails")
 
+random111 = random.randint(0, 10)
+print(random111)
