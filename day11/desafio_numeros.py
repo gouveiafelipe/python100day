@@ -1,30 +1,53 @@
+number_str = '124489903108444899'
+count_numbers = len(number_str)
+
+# pegar o primeiro indice, somar com o proximo e verificar se ele se repete na string
+
+print(len(number_str))
+number_list = []
+
+
 def numbers_loop():
-    a = 0
-    b = 2
-    c = 0
-    d = 3
-    contador = 0
     dictionary_numbers = {}
-    while contador < count_numbers:
-        index_2 = number_str[a:b]
-        number_list.append(index_2)
-        a += 1
-        b += 1
-        if len(index_2) < 2:
-            number_list.remove(index_2)
+    contador = 0
+    loop_count = 0
+    x_index = 0
+    y_index = 1
+    teemo = ''
+    for t in number_str:
+        while loop_count < count_numbers:
+            add_list = number_str[x_index: y_index]
+            number_list.append(add_list)
+            y_index += 1
+            if y_index > count_numbers:
+                x_index += 1
+                y_index = 1
+                loop_count = 0
+                break
+            loop_count += 1
 
-        index_3 = number_str[c:d]
-        number_list.append(index_3)
-        c += 1
-        d = c + 3
-        if len(index_3) < 3:
-            number_list.remove(index_3)
+    for teemo in number_list:
+        if len(teemo) < 2 or None or '':
+            number_list.remove(teemo)
+        count_numbers_list = number_list.count(teemo)
+        if count_numbers_list > 1:
+            dictionary_numbers[teemo] = count_numbers_list
+            contador += 1
 
-        for i in number_list:
-            count = number_list.count(i)
-            if count > 1:
-                dictionary_numbers[i] = count
-        contador += 1
+    print(len(number_list[0:1]))
     print(number_list)
     print(dictionary_numbers)
+
+
 numbers_loop()
+
+
+
+# for n in number_list:
+#     if len(n) < 2 or None or '':
+#         number_list.remove(n)
+#     count_numbers_list = number_list.count(n)
+# if count_numbers_list > 1:
+#     dictionary_numbers[n] = count_numbers_list
+# contador += 1
+
