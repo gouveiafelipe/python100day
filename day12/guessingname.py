@@ -6,11 +6,9 @@ print(logo)
 
 print("I'm thinking of a number between 1 and 100")
 
-random_number = random.randrange(0, 101)
-print(random_number)
-
 user_difficulty = input(f"Choose a difficulty. Type 'easy' or hard: ")
 
+random_number = random.randrange(0, 101)
 user_chances = 0
 
 if user_difficulty == 'easy':
@@ -20,14 +18,15 @@ else:
 
 print(f"You have {user_chances} attempts remaining to guess the number")
 
-user_number = 0
-
 
 def compare(user, bot):
     if user > bot:
         print("Too high.")
     else:
         print("Too low.")
+
+
+user_number = 0
 
 
 while user_number != random_number:
